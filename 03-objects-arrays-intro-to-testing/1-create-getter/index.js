@@ -6,10 +6,10 @@
 export function createGetter(path) {
   const args = path.split('.');
   return function (obj) {
-    for (let a of args) {
-      let objElement = obj[a];
+    for (const arg of args) {
+      let objElement = obj[arg];
       if (objElement === undefined) {
-        return undefined;
+        return;
       }
       obj = objElement;
     }
